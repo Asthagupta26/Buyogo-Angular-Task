@@ -1,0 +1,69 @@
+<div class="main-container" *ngIf="!created">
+    <div class="container">
+        <div class="left">
+            <img src="../../assets/logo.svg" alt="" class="logo">
+            <img src="../../assets/image-new.png" alt="" class="image">
+        </div>
+        <div class="right">
+            <img src="../../assets/goBack.svg" alt="" style="width: 104px;cursor: pointer;" *ngIf="secondForm"
+                (click)="onNext()">
+            <div class="heading">Create Account</div>
+            <img src="../../assets/first.svg" alt="" style="width: 333px;" *ngIf="!secondForm">
+            <img src="../../assets/second.svg" alt="" style="width: 333px;" *ngIf="secondForm">
+            <form action="" [formGroup]="userDetailsForm">
+                <div class="options" *ngIf="!secondForm">
+                    <div>
+                        <div class="input-heading">Enter Email ID</div>
+                        <input type="email" placeholder="Enter Email" class="input" formControlName="email">
+                    </div>
+                    <div>
+                        <div class="input-heading">Enter Full Name</div>
+                        <input type="text" placeholder="Enter Full Name" class="input" formControlName="fullName">
+                    </div>
+                    <div>
+                        <div class="input-heading">Enter Mobile Number</div>
+                        <input type="text" placeholder="Enter Mobile Number" class="input" formControlName="mobileNo">
+                    </div>
+                    <div>
+                        <div class="input-heading">Enter password</div>
+                        <input type="password" placeholder="password" class="input" formControlName="password">
+                    </div>
+                </div>
+                <div class="options" *ngIf="secondForm">
+                    <div>
+                        <div class="input-heading">Organisation Name</div>
+                        <input type="text" placeholder="Enter Organisation Name" class="input"
+                            formControlName="organisationName">
+                    </div>
+                    <div>
+                        <div class="input-heading">Organisation Id</div>
+                        <input type="text" placeholder="Enter Organisation Id" class="input"
+                            formControlName="organisationId">
+                    </div>
+                    <div>
+                        <div class="input-heading">Designation</div>
+                        <input type="text" placeholder="Enter Designation" class="input" formControlName="designation">
+                    </div>
+                    <div>
+                        <div class="input-heading">Birth Date</div>
+                        <input type="text" placeholder="Enter Birth Date" class="input" formControlName="dob">
+                    </div>
+                    <div style="display: flex;align-items: center;gap: 40px;">
+                        <div>
+                            <div class="input-heading">City</div>
+                            <input type="text" placeholder="Enter City" class="input-short" formControlName="city">
+                        </div>
+                        <div>
+                            <div class="input-heading">Pincode</div>
+                            <input type="text" placeholder="Enter pincode" class="input-short" formControlName="pincode"
+                                maxlength="6" minlength="6">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="button" (click)="onNext()" *ngIf="!secondForm">Next</button>
+            <button class="button" *ngIf="secondForm" (click)="onCreate()">Create</button>
+        </div>
+    </div>
+</div>
+<img src="../../assets/Sign up.jpg" alt="" style="width: 100%;height: 100%;" *ngIf="created">

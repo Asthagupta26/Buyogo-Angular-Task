@@ -1,0 +1,30 @@
+<!-- <p>welcome works!</p>
+
+<input type="text" placeholder="Enter email"  [(ngModel)]="email">
+
+<input type="text" placeholder="Enter number"  [(ngModel)]="mobileNo">
+
+<button (click)="onCheck()">Check</button> -->
+
+<div class="main-container">
+    <div class="container">
+        <div class="left">
+            <img src="../../assets/logo.svg" alt="" class="logo">
+            <img src="../../assets/image-new.png" alt="" class="image">
+        </div>
+        <div class="right">
+            <div class="heading">Welcome</div>
+            <div>
+                <div class="input-heading">Enter Email ID</div>
+                <input type="email" placeholder="Enter Email" class="input" [(ngModel)]="email">
+            </div>
+            <div class="or">(OR)</div>
+            <div>
+                <div class="input-heading">Enter mobile</div>
+                <input type="text" placeholder="+91" class="input" [(ngModel)]="mobileNo" minlength="10" maxlength="10"
+                    pattern="\d*">
+            </div>
+            <button class="button" (click)="onCheck()" [disabled]="isButtonDisabled()">Next</button>
+        </div>
+    </div>
+</div>

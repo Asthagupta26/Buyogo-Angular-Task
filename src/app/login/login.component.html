@@ -1,0 +1,23 @@
+<div class="main-container">
+    <div class="container" *ngIf="!loggedIn">
+        <div class="left">
+            <img src="../../assets/logo.svg" alt="" class="logo">
+            <img src="../../assets/image-new.png" alt="" class="image">
+        </div>
+        <div class="right">
+            <div class="heading">Welcome, {{userName}}</div>
+            <div>
+                <div class="input-heading">Enter Email ID</div>
+                <input type="email" placeholder="Enter Email" class="input" [(ngModel)]="email">
+            </div>
+            <div>
+                <div class="input-heading">Enter password</div>
+                <input type="password" placeholder="password" class="input" [(ngModel)]="password">
+            </div>
+            <div *ngIf="incorrectPassword" style="color: #db3427;" class="input-heading">Incorrect password. Please try
+                again</div>
+            <button class="button" (click)="login()">Login</button>
+        </div>
+    </div>
+    <img src="../../assets/loggedIn.svg" alt="" *ngIf="loggedIn">
+</div>
